@@ -1,0 +1,190 @@
+{
+  "portfolio": {
+    "n_policies": 677991,
+    "exposure_years": 358343.5,
+    "reported_claims": 26444,
+    "capped_claims": 26405,
+    "severity_rows": 26444,
+    "reported_reconciles_severity": true,
+    "claims_removed_by_capping": 39,
+    "observed_frequency": 0.07369,
+    "mean_severity_eur": 2266.0,
+    "max_severity_eur": 4075401.0
+  },
+  "frequency": {
+    "glm": {
+      "n_train": 542392,
+      "n_test": 135599,
+      "n_params": 57,
+      "poisson_aic": 170586.4,
+      "negbin_aic": 170278.7,
+      "negbin_theta": 1.287,
+      "overdispersion_pearson_over_dof": 1.681,
+      "test_poisson_deviance_glm": 0.45959,
+      "test_poisson_deviance_baseline": 0.48335,
+      "deviance_improvement_pct": 4.92,
+      "test_weighted_gini_glm": 0.2963,
+      "lift_top_bottom": 5.85
+    },
+    "ml_challenger": {
+      "test_poisson_deviance_ml": 0.45209,
+      "test_weighted_gini_ml": 0.3283,
+      "boosting_iterations": 68
+    }
+  },
+  "severity": {
+    "glm_and_tail": {
+      "n_body_claims": 25121,
+      "large_loss_threshold_eur": 4765.0,
+      "gamma_dispersion_phi": 0.477,
+      "test_gamma_deviance_glm": 0.6282,
+      "test_gamma_deviance_baseline": 0.6271,
+      "mean_severity_eur": 2266.0,
+      "tail_xi_shape": 0.904,
+      "tail_beta_scale": 3479.1,
+      "tail_p_exceed": 0.05003,
+      "tail_finite_mean": true,
+      "tail_finite_variance": false,
+      "tail_top1pct_loss_share": 0.3799,
+      "tail_sensitivity": {
+        "0.9": {
+          "threshold_eur": 2768.0,
+          "n_exceedances": 2645,
+          "xi_shape": 0.851,
+          "beta_scale": 2072.1
+        },
+        "0.95": {
+          "threshold_eur": 4765.0,
+          "n_exceedances": 1323,
+          "xi_shape": 0.904,
+          "beta_scale": 3479.1
+        },
+        "0.97": {
+          "threshold_eur": 7052.0,
+          "n_exceedances": 794,
+          "xi_shape": 0.976,
+          "beta_scale": 5031.0
+        }
+      }
+    },
+    "ml_challenger": {
+      "test_gamma_deviance_ml": 0.6258,
+      "boosting_iterations": 31
+    }
+  },
+  "pure_premium": {
+    "model_expected_count": 26364.0,
+    "observed_claim_count": 26405,
+    "model_expected_annual_loss_eur": 59728414.0,
+    "observed_total_losses_eur": 59909216.0,
+    "mean_pure_premium_eur": 177.69,
+    "pure_premium_p95_eur": 398.84
+  },
+  "reconciliation": {
+    "model_expected_loss_eur_m": 59.73,
+    "simulated_mean_loss_eur_m": 59.73,
+    "observed_total_losses_eur_m": 59.91
+  },
+  "underwriting_capital": [
+    {
+      "scenario": "Base: empirical tail, cv=5%, gross",
+      "expected_loss_eur_m": 59.73,
+      "var_995_eur_m": 76.81,
+      "tvar_995_eur_m_diagnostic": 79.45,
+      "uw_capital_eur_m": 17.08,
+      "uw_capital_pct_of_expected": 28.6
+    },
+    {
+      "scenario": "Empirical tail, cv=0%",
+      "expected_loss_eur_m": 59.73,
+      "var_995_eur_m": 74.84,
+      "tvar_995_eur_m_diagnostic": 77.26,
+      "uw_capital_eur_m": 15.11,
+      "uw_capital_pct_of_expected": 25.3
+    },
+    {
+      "scenario": "Empirical tail, cv=10%",
+      "expected_loss_eur_m": 59.73,
+      "var_995_eur_m": 82.04,
+      "tvar_995_eur_m_diagnostic": 85.15,
+      "uw_capital_eur_m": 22.31,
+      "uw_capital_pct_of_expected": 37.4
+    },
+    {
+      "scenario": "GPD tail extrapolation, gross (stress)",
+      "expected_loss_eur_m": 82.68,
+      "var_995_eur_m": 371.92,
+      "tvar_995_eur_m_diagnostic": 1254.57,
+      "uw_capital_eur_m": 289.24,
+      "uw_capital_pct_of_expected": 349.8
+    },
+    {
+      "scenario": "Net of per-claim cap EUR 2,000,000",
+      "expected_loss_eur_m": 57.66,
+      "var_995_eur_m": 69.81,
+      "tvar_995_eur_m_diagnostic": 71.49,
+      "uw_capital_eur_m": 12.15,
+      "uw_capital_pct_of_expected": 21.1
+    },
+    {
+      "scenario": "Net of per-claim cap EUR 1,000,000",
+      "expected_loss_eur_m": 55.96,
+      "var_995_eur_m": 65.98,
+      "tvar_995_eur_m_diagnostic": 67.29,
+      "uw_capital_eur_m": 10.02,
+      "uw_capital_pct_of_expected": 17.9
+    },
+    {
+      "scenario": "GPD stress, net of per-claim cap EUR 2,000,000",
+      "expected_loss_eur_m": 58.09,
+      "var_995_eur_m": 70.66,
+      "tvar_995_eur_m_diagnostic": 72.46,
+      "uw_capital_eur_m": 12.56,
+      "uw_capital_pct_of_expected": 21.6
+    }
+  ],
+  "gpd_stress_sensitivity": {
+    "by_threshold": {
+      "0.9": {
+        "xi": 0.851,
+        "uw_capital_eur_m": 189.5
+      },
+      "0.95": {
+        "xi": 0.904,
+        "uw_capital_eur_m": 301.0
+      },
+      "0.97": {
+        "xi": 0.976,
+        "uw_capital_eur_m": 487.3
+      }
+    },
+    "by_seed": [
+      301.0,
+      299.8,
+      291.6,
+      297.8,
+      290.2
+    ],
+    "by_param_bootstrap": {
+      "n_fits": 40,
+      "n_infinite_mean_xi_ge_1": 2,
+      "capital_p05_eur_m": 119.4,
+      "capital_p50_eur_m": 279.4,
+      "capital_p95_eur_m": 515.1,
+      "infinite_mean_var_range_eur_m": [
+        1027.4,
+        1047.6
+      ]
+    },
+    "by_n_sims": {
+      "50000": 289.9,
+      "100000": 301.0,
+      "200000": 305.1
+    },
+    "range_eur_m": [
+      119.4,
+      515.1
+    ]
+  },
+  "n_sims": 200000
+}
